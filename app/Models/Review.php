@@ -11,4 +11,22 @@ class Review extends Model
 
     //Defino la tabla a la que se relaciona en la base de datos por seguridad
     protected $table = "reviews";
+
+    protected $primaryKey = 'idReview';
+
+    protected $fillable = [
+        'idPost',
+        'nombreJuego',
+        'resumenReview',
+        'contenidoReview',
+        'puntajeJuego',
+        'generoJuego',
+        'imgCard',
+        'imgPortada',
+    ];
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class, 'idPost');
+    }
 }

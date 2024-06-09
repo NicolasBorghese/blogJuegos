@@ -11,4 +11,20 @@ class Noticia extends Model
 
     //Defino la tabla a la que se relaciona en la base de datos por seguridad
     protected $table = "noticias";
+
+    protected $primaryKey = 'idNoticia';
+
+    protected $fillable = [
+        'idPost',
+        'tituloNoticia',
+        'resumenNoticia',
+        'contenidoNoticia',
+        'imgCard',
+        'imgPortada',
+    ];
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class, 'idPost');
+    }
 }

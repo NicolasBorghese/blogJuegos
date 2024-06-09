@@ -20,6 +20,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'rol',
+        'imgUsuario',
+        'habilitado',
     ];
 
     /**
@@ -42,6 +45,25 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'habilitado' => 'boolean',
         ];
+    }
+
+    //------------------------------------------------------
+
+    /**
+     * Get the posts for the user.
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'idUser');
+    }
+
+    /**
+     * Get the comments for the user.
+     */
+    public function comentarios()
+    {
+        return $this->hasMany(Comentario::class, 'idUser');
     }
 }
