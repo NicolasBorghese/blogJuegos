@@ -22,11 +22,11 @@ class StoreReviewRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nombreJuego' => 'required|string|max:255',
-            'resumenReview' => 'required|string|max:500',
+            'nombreJuego' => 'required|string|max:30',
+            'resumenReview' => 'required|string|max:50',
             'contenidoReview' => 'required|string',
             'puntajeJuego' => 'required|numeric|min:0|max:10',
-            'generoJuego' => 'required|string|max:255',
+            'generoJuego' => 'required|string|max:20',
             'imgCard' => 'required|image|mimes:jpeg,png,jpg,gif',
             'imgPortada' => 'required|image|mimes:jpeg,png,jpg,gif',
         ];

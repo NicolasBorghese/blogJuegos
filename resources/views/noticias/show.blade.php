@@ -20,7 +20,10 @@
                 <div class="border-b border-gray-200 py-4">
                     <div class="flex items-center mb-2">
                         <img class="w-14 h-14 rounded-full" src="{{ asset('storage/images/' . $comentario->user->imgUsuario) }}" alt="{{ $comentario->user->name }}">
-                        <span class="ml-4 font-semibold">{{ $comentario->user->name }}</span>
+                        <div class="ml-4">
+                            <span class="font-semibold">{{ $comentario->user->name }}</span>
+                            <span class="block text-sm text-gray-500">{{ $comentario->created_at->format('d/m/Y H:i') }}</span>
+                        </div>
                     </div>
                     <p class="text-gray-700">{{ $comentario->contenidoComentario }}</p>
                 </div>

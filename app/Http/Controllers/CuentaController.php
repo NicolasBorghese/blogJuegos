@@ -61,6 +61,12 @@ class CuentaController extends Controller
             }
         }
 
+        if($request->filled('rol')){
+            if($user->rol != $request->rol){
+                $user->rol = $request->rol;
+            }
+        }
+
         if($request->filled('password')){
             if($request->password != ""){
                 $request->validate([
@@ -123,5 +129,10 @@ class CuentaController extends Controller
             $query->where('idUser', $idUser);
         })->orderBy('idNoticia', 'desc')->get();
         return view('cuenta.noticias', compact('noticias'));
+    }
+
+    public function users(){
+        $users = User::orderBy('id', 'asc')->get();
+        return view('cuenta.users', compact('users'));
     }
 }
