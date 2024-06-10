@@ -17,7 +17,7 @@
     @else
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
             @foreach($noticias as $noticia)
-            <a href="{{ route('noticias.show', $noticia) }}">
+            <a href="{{ route('noticias.edit', $noticia) }}">
                 <div class="col-span-1 bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105 h-full">
                     <img class="w-full h-48 object-cover rounded-t-lg" src="{{ asset('storage/images/'. $noticia->imgCard) }}" alt="{{ $noticia->tituloNoticia }}">
                     <div class="p-6">
