@@ -29,6 +29,7 @@ Route::get('cuenta/ingresar', [CuentaController::class, 'ingresar'])->name('cuen
 Route::post('cuenta', [CuentaController::class, 'login'])->name('cuenta.login');
 Route::get('cuenta', [CuentaController::class, 'logout'])->name('cuenta.logout');
 Route::get('cuenta/edit', [CuentaController::class, 'edit'])->name('cuenta.edit');
+Route::put('cuenta/{id}/edit', [CuentaController::class, 'update'])->name('cuenta.update');
 Route::get('cuenta/users', [CuentaController::class, 'users'])->name('cuenta.users');
 Route::get('cuenta/reviews', [CuentaController::class, 'reviews'])->name('cuenta.reviews');
 Route::get('cuenta/noticias', [CuentaController::class, 'noticias'])->name('cuenta.noticias');

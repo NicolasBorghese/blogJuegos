@@ -34,10 +34,8 @@
             </button>
 
             <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20">
-                <!-- Opciones comunes a todos los roles -->
                 <a href="{{ route('cuenta.edit') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Configurar Perfil</a>
 
-                <!-- Opciones para el rol de lector -->
                 @if(Auth::user()->rol == 'lector')
                     <form method="GET" action="{{ route('cuenta.logout') }}" class="block">
                         @csrf
@@ -45,7 +43,6 @@
                     </form>
                 @endif
 
-                <!-- Opciones para el rol de autor -->
                 @if(Auth::user()->rol == 'autor')
                     <a href="{{ route('reviews.create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Crear Review</a>
                     <a href="{{ route('noticias.create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Crear Noticia</a>
@@ -57,7 +54,6 @@
                     </form>
                 @endif
 
-                <!-- Opciones para el rol de administrador -->
                 @if(Auth::user()->rol == 'administrador')
                     <a href="{{ route('reviews.create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Crear Review</a>
                     <a href="{{ route('noticias.create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Crear Noticia</a>
