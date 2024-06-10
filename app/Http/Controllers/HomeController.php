@@ -12,7 +12,6 @@ class HomeController extends Controller
     {
         $noticias = Noticia::orderBy('idNoticia', 'desc')->take(4)->get();
         $reviews = Review::orderBy('idReview', 'desc')->take(5)->get();
-
         return view('home', compact('noticias', 'reviews'));
     }
 }

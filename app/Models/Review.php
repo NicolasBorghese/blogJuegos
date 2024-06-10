@@ -29,4 +29,9 @@ class Review extends Model
     {
         return $this->belongsTo(Post::class, 'idPost');
     }
+
+    public function comentarios()
+    {
+        return $this->hasMany(Comentario::class, 'idPost', 'idPost');
+    }
 }
