@@ -32,6 +32,10 @@
         </div>
     </div>
 
+    @guest
+
+    @else
+
     <div class="bg-white rounded-lg shadow-md overflow-hidden w-3/4 mx-auto mt-6">
         <div class="p-6">
             <h3 class="text-2xl font-semibold mb-4">Agregar Comentario</h3>
@@ -48,5 +52,7 @@
             </form>
         </div>
     </div>
+
+    @endguest
 
 @endsection()
