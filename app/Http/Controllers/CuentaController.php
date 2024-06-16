@@ -78,7 +78,10 @@ class CuentaController extends Controller
 
         if ($request->hasFile('imgUsuario')) {
             if ($user->imgUsuario) {
-                Storage::delete('public/images/' . $user->imgUsuario);
+                if($user->imgUsuario != 'imgUsuario0.jpg'){
+                    Storage::delete('public/images/' . $user->imgUsuario);
+                }
+
             }
             $file = $request->file('imgUsuario');
             $filename = time() . '_profile.' . $file->getClientOriginalExtension();
@@ -91,18 +94,22 @@ class CuentaController extends Controller
         return redirect()->route('cuenta.edit', $user->id)->with('success', 'Perfil actualizado correctamente');
     }
 
-    public function login(Request $request){
-        $credentials = [
-            'email' => $request->email,
-            'password' => $request->password,
-            //'habiitado' => true
-        ];
-        //$remember = ($request->has('remember') ? true : false);
-        if (Auth::attempt($credentials)){
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::validate($credentials)) {
+            Auth::attempt($credentials);
             $request->session()->regenerate();
             return redirect(route('home'));
         } else {
-            return redirect(route('cuenta.ingresar'));
+            // La contraseña es incorrecta o el correo electrónico no existe
+            return redirect(route('cuenta.ingresar'))->with('error', 'Las credenciales proporcionadas son incorrectas.');
         }
     }
 

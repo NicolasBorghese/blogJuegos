@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -15,9 +16,9 @@ class UserSeeder extends Seeder
     {
         $user1 = new User();
         $user1->id = '1';
-        $user1->name = 'admin';
+        $user1->name = 'Admin';
         $user1->email = 'admin@mail.com';
-        $user1->password = bcrypt('1234');
+        $user1->password = Hash::make('1234');
 
         $user1->rol = 'administrador';
         $user1->imgUsuario = 'imgUsuario1.jpg';
@@ -27,9 +28,9 @@ class UserSeeder extends Seeder
 
         $user2 = new User();
         $user2->id = '2';
-        $user2->name = 'autor';
+        $user2->name = 'Autor';
         $user2->email = 'autor@mail.com';
-        $user2->password = bcrypt('1234');
+        $user2->password = Hash::make('1234');
 
         $user2->rol = 'autor';
         $user2->imgUsuario = 'imgUsuario2.jpg';
@@ -39,9 +40,9 @@ class UserSeeder extends Seeder
 
         $user3 = new User();
         $user3->id = '3';
-        $user3->name = 'lector';
+        $user3->name = 'Lector';
         $user3->email = 'lector@mail.com';
-        $user3->password = bcrypt('1234');
+        $user3->password = Hash::make('1234');
 
         $user3->rol = 'lector';
         $user3->imgUsuario = 'imgUsuario3.jpg';
