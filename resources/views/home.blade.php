@@ -4,6 +4,17 @@
 
 @section('content')
 
+@if(session('error'))
+
+    <div class="flex items-center justify-center w-full mx-auto my-6 bg-red-100 border border-red-400 text-red-700 rounded" role="alert">
+        <div class="rounded-lg shadow-md w-full p-6 text-center">
+            <h3 class="text-2xl font-semibold mb-4">Error</h3>
+            <p class="text-red-700 font-bold">{{ session('error') }}</p>
+        </div>
+    </div>
+
+@else
+
 <div>
     <h1 class="text-3xl font-bold mb-6 text-slate-900">ÚLTIMAS NOTICIAS</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
@@ -37,5 +48,7 @@
         @endforeach
     </div>
 </div>
+
+@endif
 
 @endsection()
