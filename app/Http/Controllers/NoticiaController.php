@@ -8,10 +8,12 @@ use App\Models\Noticia;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class NoticiaController extends Controller
 {
     public function index(){
+        Log::info("Entre al al index de las noticias");
         $noticias = Noticia::orderBy('idNoticia', 'desc')->get();
         return view('noticias.index', compact('noticias'));
     }
@@ -22,6 +24,7 @@ class NoticiaController extends Controller
     }
 
     public function create(){
+        Log::info("Entre al create en el controlador");
         return view('noticias.create');
     }
 
