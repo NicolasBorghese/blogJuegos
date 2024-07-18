@@ -1,66 +1,207 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div align="center">
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Programación Web Avanzada 2024
 
-## About Laravel
+<h3>Trabajo Práctico N°3: Laravel</h3>
+Framework
+<br><br>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Logo del sitio:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<img src="public/images/logo_blogJuegos.png" width="40%" alt="Logo del sitio"/>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<br>
 
-## Learning Laravel
+</div>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<h3>Grupo A</h3>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   Borghese Nicolás \[FAI-997\]
+-   La Forgia Floriana \[FAI-2498\]
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+<h3>Descripción de la aplicación</h3>
 
-### Premium Partners
+La aplicación corresponde al sitio web de un blog sobre videojuegos. En el sitio se pueden encontrar posts que se dividen en dos categorías, noticias sobre videojuegos y reviews. También cuenta con un sistema de login y creación de cuentas las cuales inician con el rol de lector el cual permite registrar comentarios en el sitio. Existe además el rol de autor que permite crear y editar posts. Por último está el rol de administrador que tiene todas las funcionalidades anteriores y además puede administrar los roles de las distintas cuentas de usuario.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+---
+<h3>Imágenes de referencia del sitio</h3>
 
-## Contributing
+<img src="public/images/vistaProyecto01.png" alt="Imagen de referencia 01"/>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<div align="center">
+  <img src="public/images/vistaProyecto02.png" width="220" alt="Imagen de referencia 02">
+  <img src="public/images/vistaProyecto03.png" width="220" alt="Imagen de referencia 03">
+  <img src="public/images/vistaProyecto04.png" width="220" alt="Imagen de referencia 04">
+</div>
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<h3>Modelo de datos</h3>
 
-## Security Vulnerabilities
+<img src="public/images/DiagramaDeClasesTP3Laravel.png" alt="Modelo de datos"/>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
+<h3>Guía de instalación</h3>
 
-## License
+Para poder ejecutar este proyecto en su ordenador es necesario contar primero con las siguientes herramientas:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- <b>Un editor de código</b>, si no cuenta con ninguno recomendamos el uso de <b>Visual Studio Code</b> para Windows
+
+<div align="center">
+
+[Link al sitio de Visual Studio Code](https://code.visualstudio.com/)
+
+</div>
+
+- <b>Git</b>, un sistema de control de versiones distribuido
+
+<div align="center">
+
+[Link al sitio de Git](https://git-scm.com/)
+
+</div>
+
+- <b>Node.js</b>, un entorno de ejecución de JavaScript
+
+<div align="center">
+
+[Link al sitio de Node.js](https://nodejs.org/en)
+
+</div>
+
+- <b>PHP</b>, lenguaje de desarrollo web
+
+<div align="center">
+
+[Link al sitio de PHP](https://www.php.net/manual/es/install.php)
+
+</div>
+
+- <b>Composer</b>, herramienta de gestión de dependencias en PHP
+
+<div align="center">
+
+[Link al sitio de Composer](https://getcomposer.org/)
+
+</div>
+
+- <b>XAMPP</b>, sistema de gestión de bases de datos MySQL, servidor web Apache y los intérpretes para lenguajes de script PHP y Perl
+
+<div align="center">
+
+[Link al sitio de XAMPP](https://www.apachefriends.org/es/index.html)
+
+</div>
+
+<br>
+
+Si ya tiene estas herramientas instaladas en su equipo entonces debe ejecutar su editor de código, abrir una nueva terminal y seguir los siguientes pasos:
+
+<br>
+
+1. Ubicar la terminal en el directorio deseado para instalar el proyecto y clonar el repositorio ejecutando en consola el comando:
+
+```bash
+git clone https://github.com/NicolasBorghese/blogjuegos2.git
+```
+2. Acceder a la carpeta donde se instalo el proyecto con el comando:
+
+```bash
+cd blogjuegos2
+```
+3. Instalar las dependencias de composer necesarias para el proyecto ejecutando el comando:
+
+```bash
+composer install
+```
+
+4. Instalar las dependencias de node necesarias para el proyecto ejecutando el comando:
+
+```bash
+npm install
+```
+
+5. Configurar el archivo .env (Copiar el archivo .env.example y crear un nuevo archivo .env):
+Luego brir el archivo .env y configurar las variables de entorno necesarias, como la conexión a la base de datos y otras configuraciones específicas.
+
+```bash
+cp .env.example .env
+```
+
+6. Generar la clave de la aplicación
+
+```bash
+php artisan key:generate
+```
+
+7. Abrir el panel de XAMPP e iniciar Apacha y MySql. Luego dirigirse a http://localhost/phpmyadmin/index.php y en la solapa SQL ejecutar el siguiente comando
+
+```bash
+CREATE DATABASE blogjuegos
+```
+
+8. Migrar la base de datos:
+
+```bash
+php artisan migrate
+```
+
+9. Poblar la base de datos:
+
+```bash
+php artisan db:seed
+```
+
+10. Crear un enlace simbólico para poder acceder a las imágenes del proyecto
+
+```bash
+php artisan storage:link
+```
+
+11. Compilar los recursos de front-end:
+
+```bash
+npm run dev
+```
+
+12. Servir la aplicación:
+
+```bash
+php artisan serve
+```
+
+13. Ir a la siguiente dirección en el navegador para poder visualizar el sitio:
+
+```bash
+http://127.0.0.1:8000/
+```
+
+---
+<h3>Tecnologías utilizadas</h3>
+
+<table>
+    <tr>
+        <td><b>Nombre</b></td>
+        <td><b>Versión</b></td>
+        <td><b>Descripción</b></td>
+        <td><b>Link</b></td>
+    </tr>
+    <tr>
+        <td>Laravel</td>
+        <td>11.10.0</td>
+        <td>Framework PHP</td>
+        <td>https://laravel.com/</td>
+    </tr>
+        <tr>
+        <td>Tailwind</td>
+        <td>3.4.4</td>
+        <td>Librería de CSS</td>
+        <td>https://tailwindcss.com/</td>
+    </tr>
+</table>
+
+---
