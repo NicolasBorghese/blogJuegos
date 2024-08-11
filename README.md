@@ -104,95 +104,87 @@ Si ya tiene estas herramientas instaladas en su equipo entonces debe ejecutar su
 <br>
 
 1. Ubicar la terminal en el directorio deseado para instalar el proyecto y clonar el repositorio ejecutando en consola el comando:
-
 ```bash
 git clone https://github.com/NicolasBorghese/blogjuegos2.git
 ```
-2. Acceder a la carpeta donde se instalo el proyecto con el comando:
 
+2. Acceder a la carpeta donde se instalo el proyecto con el comando:
 ```bash
 cd blogjuegos2
 ```
-3. Instalar las dependencias de composer necesarias para el proyecto ejecutando el comando:
 
+3. Instalar las dependencias de composer necesarias para el proyecto ejecutando el comando:
 ```bash
 composer install
 ```
 
 4. Instalar las dependencias de node necesarias para el proyecto ejecutando el comando:
-
 ```bash
 npm install
 ```
 
 5. Configurar el archivo .env (para esto se recomienda copiar el archivo <i>.env.example</i> pegarlo en la raíz del proyecto y cambiarle el nombre a <i>.env</i>):
 Si se realiza el paso de la recomendación al acceder al archivo <i>.env</i> se encontrará con la configuración que tiene por defecto. En caso de que haga falta se deben modificar las variables de entorno necesarias, como la conexión a la base de datos y otras configuraciones específicas.
-
 ```bash
 cp .env.example .env
 ```
 
-6. Para poder utilizar las imágenes del poblamiento de datos que creamos para el proyecto (paso 10)debe copiar la carpeta <i>images</i> que se encuentra en la raíz del proyecto en la dirección storage/app/public
-
+6. Para poder utilizar las imágenes del poblamiento de datos que creamos para el proyecto (paso 10) debe copiar la carpeta <i>images</i> que se encuentra en la raíz del proyecto en la dirección storage/app/public
 ```bash
 cp images storage/app/public/images
 ```
 
 7. Generar la clave de la aplicación
-
 ```bash
 php artisan key:generate
 ```
 
 8. Abrir el panel de XAMPP e iniciar Apache y MySql. Luego dirigirse a http://localhost/phpmyadmin/index.php y en la solapa SQL ejecutar el siguiente comando
-
 ```bash
 CREATE DATABASE blogjuegos
 ```
 
 9. Migrar la base de datos:
-
 ```bash
 php artisan migrate
 ```
 
 10. Poblar la base de datos:
-
 ```bash
 php artisan db:seed
 ```
 
 11. Crear un enlace simbólico para poder acceder a las imágenes del proyecto
-
 ```bash
 php artisan storage:link
 ```
+
+<br>
+<br>
 <div align="center">
 
 <b>Los pasos siguientes junto con abrir el panel de XAMPP e iniciar Apache y MySql serán los pasos recurrentes para ejecutar la aplicación en el navegador una vez que ya se encuentre todo configurado.</b>
 
 </div>
+<br>
+<br>
 
 12. Servir la aplicación:
-
 ```bash
 php artisan serve
 ```
 
 13. Compilar los recursos de front-end:
-
 ```bash
 npm run dev
 ```
 
 14. Ir a la siguiente dirección en el navegador para poder visualizar el sitio:
-
 ```bash
 http://127.0.0.1:8000/
 ```
 
 15. En caso de necesitar reestablecer la base de datos desde cero con el poblamiento por defecto se recomienda utilizar el siguiente comando:
-
 ```bash
 php artisan migrate:fresh --seed
 ```
