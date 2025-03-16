@@ -106,13 +106,13 @@ Si ya tiene estas herramientas instaladas en su equipo entonces debe ejecutar su
 1. Ubicar la terminal en el directorio deseado para instalar el proyecto y clonar el repositorio ejecutando en consola el comando:
 
 ```bash
-git clone https://github.com/NicolasBorghese/blogjuegos2.git
+git clone https://github.com/NicolasBorghese/blogJuegos.git
 ```
 
 2. Acceder a la carpeta donde se instalo el proyecto con el comando:
 
 ```bash
-cd blogjuegos2
+cd blogJuegos
 ```
 
 3. Instalar las dependencias de composer necesarias para el proyecto ejecutando el comando:
