@@ -3,7 +3,7 @@
         <p class="mb-4 font-bold">&copy; 2024 PWA Grupo A</p>
         <ul>
             <li>
-                <p>Borghese Nicolás FAI-997</p>
+                <p>Borghese Nicolas FAI-997</p>
             </li>
             <li>
                 <p>La Forgia Floriana FAI-2498</p>

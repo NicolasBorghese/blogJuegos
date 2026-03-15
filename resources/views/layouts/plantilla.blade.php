@@ -10,14 +10,14 @@
     <!-- estilos -->
     @vite('resources/css/app.css')
 </head>
-<body class="bg-slate-400">
+<body class="bg-slate-400 flex flex-col min-h-screen">
 
 <!-- header -->
 <!-- nav -->
 @include('layouts.partials.header')
 
 
-<div class="container mx-auto p-10 bg-slate-400 w-full">
+<div class="container mx-auto p-10 bg-slate-400 w-full flex-1">
 
 @yield('content')
 

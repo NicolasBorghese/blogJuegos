@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('idPost');
             $table->text('contenidoComentario');
             $table->boolean('habilitado')->default(true);
+            $table->timestamp('fechaDeshabilitado')->nullable();
             $table->timestamps();
 
             $table->foreign('idUser')->references('id')->on('users')->onDelete('cascade');

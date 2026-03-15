@@ -18,8 +18,8 @@ Logo del sitio:
 
 <h3>Grupo A</h3>
 
--   Borghese Nicolás \[FAI-997\]
--   La Forgia Floriana \[FAI-2498\]
+- Borghese Nicolas \[FAI-997\]
+- La Forgia Floriana \[FAI-2498\]
 
 ---
 
@@ -28,6 +28,7 @@ Logo del sitio:
 La aplicación corresponde al sitio web de un blog sobre videojuegos. En el sitio se pueden encontrar posts que se dividen en dos categorías, noticias sobre videojuegos y reviews. También cuenta con un sistema de login y creación de cuentas las cuales inician con el rol de lector el cual permite registrar comentarios en el sitio. Existe además el rol de autor que permite crear y editar posts. Por último está el rol de administrador que tiene todas las funcionalidades anteriores y además puede administrar los roles de las distintas cuentas de usuario.
 
 ---
+
 <h3>Imágenes de referencia del sitio</h3>
 
 <img src="public/images/vistaProyecto01.png" alt="Imagen de referencia 01"/>
@@ -45,6 +46,7 @@ La aplicación corresponde al sitio web de un blog sobre videojuegos. En el siti
 <img src="public/images/DiagramaDeClasesTP3Laravel.png" alt="Modelo de datos"/>
 
 ---
+
 <h3>Guía de instalación</h3>
 
 Para poder ejecutar este proyecto en su ordenador es necesario contar primero con las siguientes herramientas:
@@ -89,13 +91,15 @@ Para poder ejecutar este proyecto en su ordenador es necesario contar primero co
 
 </div>
 
-- <b>XAMPP</b>, sistema de gestión de bases de datos MySQL, servidor web Apache y los intérpretes para lenguajes de script PHP y Perl
+- <b>PostgreSQL</b>, sistema de gestión de bases de datos relacional
 
 <div align="center">
 
-[Link al sitio de XAMPP](https://www.apachefriends.org/es/index.html)
+[Link al sitio de PostgreSQL](https://www.postgresql.org/download/)
 
 </div>
+
+> **Importante:** PHP debe tener habilitada la extensión `pdo_pgsql`. Para verificarlo ejecutá `php -m | grep pgsql`. Si no aparece, habilitala descomentando `extension=pdo_pgsql` en tu archivo `php.ini`.
 
 <br>
 
@@ -127,84 +131,93 @@ composer install
 npm install
 ```
 
-5. Configurar el archivo <i><b>.env</b></i>, para esto se recomienda copiar el archivo <i><b>.env.example</b></i> pegarlo en la raíz del proyecto y cambiarle el nombre a <i><b>.env</b></i> (que es lo que hace el comando de abajo).
-Si se realiza el paso de la recomendación al acceder al archivo <i><b>.env</b></i> se encontrará con la configuración que tiene por defecto. En caso de que haga falta se deben modificar las variables de entorno necesarias, como la conexión a la base de datos y otras configuraciones específicas.
+5. Configurar el archivo <i><b>.env</b></i> copiando el archivo <i><b>.env.example</b></i>:
 
 ```bash
 cp .env.example .env
 ```
 
-6. Para poder utilizar las imágenes del poblamiento de datos que creamos para el proyecto (paso 10) debe copiar la carpeta <i><b>images</b></i> que se encuentra en la raíz del proyecto en la dirección storage/app/public
+   Luego abrí el archivo `.env` y actualizá las credenciales de PostgreSQL según tu instalación local:
 
-```bash
-cp images storage/app/public/images
+```
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=blogjuegos
+DB_USERNAME=postgres
+DB_PASSWORD=tu_contraseña
 ```
 
-7. Generar la clave de la aplicación:
+6. Generar la clave de la aplicación:
 
 ```bash
 php artisan key:generate
 ```
 
-8. Abrir el panel de XAMPP e iniciar Apache y MySql. Luego dirigirse a http://localhost/phpmyadmin/index.php y en la solapa SQL ejecutar el siguiente comando:
+7. Crear la base de datos en PostgreSQL. Podés hacerlo desde la terminal de PostgreSQL (`psql`) o cualquier cliente como pgAdmin:
 
-```bash
-CREATE DATABASE blogjuegos
+```sql
+CREATE DATABASE blogjuegos;
 ```
 
-9. Migrar la base de datos:
+8. Migrar y poblar la base de datos:
 
 ```bash
-php artisan migrate
+php artisan migrate --seed
 ```
 
-10. Poblar la base de datos:
-
-```bash
-php artisan db:seed
-```
-
-11. Crear un enlace simbólico para poder acceder a las imágenes del proyecto
+9. Crear el enlace simbólico para acceder a las imágenes del proyecto:
 
 ```bash
 php artisan storage:link
 ```
 
 <br>
-<br>
 <div align="center">
 
-<b>Los pasos siguientes junto con abrir el panel de XAMPP e iniciar Apache y MySql serán los pasos recurrentes para ejecutar la aplicación en el navegador una vez que ya se encuentre todo configurado.</b>
+<b>Los pasos siguientes serán los pasos recurrentes para ejecutar la aplicación en el navegador una vez que ya se encuentre todo configurado.</b>
 
 </div>
 <br>
-<br>
 
-12. Compilar los recursos de front-end (este comando genera un link en consola que no dirige a la aplicación):
+10. Compilar los recursos de front-end (en una terminal, este comando genera un link en consola que no dirige a la aplicación):
 
 ```bash
 npm run dev
 ```
 
-13. Servir la aplicación (este comando genera el link válido en consola para ingresar a la apliación):
+11. Servir la aplicación (en otra terminal, este comando genera el link válido para ingresar a la aplicación):
 
 ```bash
 php artisan serve
 ```
 
-14. Ir a la siguiente dirección en el navegador para poder visualizar el sitio:
+12. Ir a la siguiente dirección en el navegador para visualizar el sitio:
 
 ```bash
 http://127.0.0.1:8000/
 ```
 
-15. En caso de necesitar reestablecer la base de datos desde cero con el poblamiento por defecto se recomienda utilizar el siguiente comando:
+13. En caso de necesitar reestablecer la base de datos desde cero con el poblamiento por defecto:
 
 ```bash
 php artisan migrate:fresh --seed
 ```
 
 ---
+
+<h3>Usuarios por defecto</h3>
+
+Al poblar la base de datos con `php artisan db:seed` se crean los siguientes usuarios:
+
+| Nombre | Email | Contraseña | Rol |
+|--------|-------|------------|-----|
+| Admin | admin@mail.com | 1234 | administrador |
+| Autor | autor@mail.com | 1234 | autor |
+| Lector | lector@mail.com | 1234 | lector |
+
+---
+
 <h3>Tecnologías utilizadas</h3>
 
 <table>
@@ -225,6 +238,18 @@ php artisan migrate:fresh --seed
         <td>3.4.4</td>
         <td>Librería de CSS</td>
         <td>https://tailwindcss.com/</td>
+    </tr>
+    <tr>
+        <td>PostgreSQL</td>
+        <td>-</td>
+        <td>Base de datos relacional</td>
+        <td>https://www.postgresql.org/</td>
+    </tr>
+    <tr>
+        <td>Vite</td>
+        <td>5.2.13</td>
+        <td>Bundler de assets</td>
+        <td>https://vitejs.dev/</td>
     </tr>
 </table>
 
